@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "uuid": "^11.1.0"
+  },
+  "scripts" : {
+  	"dev" : "node app.js" ,
+	"format": "prettier --write \"src/**/*.{js,json}\" \"app.js\"",
+	"lint" : "eslint \"src/**/*.{js,ts}\" \"app.js\""
+  },
+  "devDependencies": {
+    "eslint": "^9.33.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
+  }
+}
