@@ -8,45 +8,45 @@
 - [x] **Description:** Set up the initial Node.js project, install all required dependencies for the server, and prepare development tools.
 - **✅ Definition of Done:**
     - [x] Node.js project initialized with `package.json`.
-    - [ ] Dependencies installed: `express`, `dotenv`, `uuid`, `cors`.
-    - [ ] Development dependencies installed: `nodemon`, `eslint`, `prettier`.
-    - [ ] `scripts` for `dev`, `start`, `lint`, and `format` are added to `package.json`.
-    - [ ] A `.gitignore` file is created to exclude `node_modules/` and `.env`.
+    - [x] Dependencies installed: `express`, `dotenv`, `uuid`, `cors`.
+    - [x] Development dependencies installed: `nodemon`, `eslint`, `prettier`.
+    - [x] `scripts` for `dev`, `start`, `lint`, and `format` are added to `package.json`.
+    - [x] A `.gitignore` file is created to exclude `node_modules/` and `.env`.
 
 ### **Task #2: Implement Server & Folder Structure**
-- [ ] **Description:** Create the main Express application files and establish the complete MVC folder structure as defined in the specification.
+- [x] **Description:** Create the main Express application files and establish the complete MVC folder structure as defined in the specification.
 - **✅ Definition of Done:**
-    - [ ] `src/server.js` (entry point) and `src/app.js` (Express app setup) are created.
-    - [ ] The server runs successfully using `npm run dev`.
-    - [ ] The required folder structure is in place: `src/routes`, `src/controllers`, `src/models`, `src/middleware`, `src/utils`, `src/config`, and `data`.
-    - [ ] `express.json()` middleware is applied in `app.js`.
+    - [x] `src/server.js` (entry point) and `src/app.js` (Express app setup) are created.
+    - [x] The server runs successfully using `npm run dev`.
+    - [x] The required folder structure is in place: `src/routes`, `src/controllers`, `src/models`, `src/middleware`, `src/utils`, `src/config`, and `data`.
+    - [x] `express.json()` middleware is applied in `app.js`.
 
 ### **Task #3: Implement Core Middleware**
-- [ ] **Description:** Create the mandatory middleware for request logging, centralized error handling, and handling 404 Not Found errors.
+- [x] **Description:** Create the mandatory middleware for request logging, centralized error handling, and handling 404 Not Found errors.
 - **✅ Definition of Done:**
-    - [ ] **Request Logger**: Middleware in `src/middleware/request-logger.js` logs requests in the format `METHOD PATH STATUS (ms)` (e.g., `POST /api/posts 201 (8ms)`).
-    - [ ] **Error Handler**: Middleware in `src/middleware/error-handler.js` catches all thrown errors and formats them into the standard JSON error shape `{ "data": null, "error": { ... } }`. It ensures no response is sent twice.
-    - [ ] **Not Found Handler**: Middleware in `src/middleware/not-found.js` handles any requests to unknown routes, returning a 404 status with the correct error message `{ error: { message: "Route not found" } }`.
-    - [ ] All middleware are correctly integrated into `app.js`.
+    - [x] **Request Logger**: Middleware in `src/middleware/request-logger.js` logs requests in the format `METHOD PATH STATUS (ms)` (e.g., `POST /api/posts 201 (8ms)`).
+    - [x] **Error Handler**: Middleware in `src/middleware/error-handler.js` catches all thrown errors and formats them into the standard JSON error shape `{ "data": null, "error": { ... } }`. It ensures no response is sent twice.
+    - [x] **Not Found Handler**: Middleware in `src/middleware/not-found.js` handles any requests to unknown routes, returning a 404 status with the correct error message `{ error: { message: "Route not found" } }`.
+    - [x] All middleware are correctly integrated into `app.js`.
 
 ---
 
 ## **Phase 2: Persistence & Data Model**
 
 ### **Task #4: Implement JSON Persistence Module**
-- [ ] **Description:** Build the `file-store.js` utility to handle all file system interactions for the `posts.json` file, including atomic writes and a write queue.
+- [x] **Description:** Build the `file-store.js` utility to handle all file system interactions for the `posts.json` file, including atomic writes and a write queue.
 - **✅ Definition of Done:**
-    - [ ] The module uses `fs/promises` for all file operations.
-    - [ ] **Atomic Writes**: All write operations first write to a temporary file (e.g., `posts.tmp.json`) and then rename it to `posts.json` to prevent data corruption.
-    - [ ] **Write Queue**: A single-process queue is implemented to serialize all write operations, ensuring they happen one after another.
-    - [ ] The `data/posts.json` file is created with 2-3 sample posts matching the data model.
+    - [x] The module uses `fs/promises` for all file operations.
+    - [x] **Atomic Writes**: All write operations first write to a temporary file (e.g., `posts.tmp.json`) and then rename it to `posts.json` to prevent data corruption.
+    - [x] **Write Queue**: A single-process queue is implemented to serialize all write operations, ensuring they happen one after another.
+    - [x] The `data/posts.json` file is created with 2-3 sample posts matching the data model.
 
 ### **Task #5: Implement Post Model**
-- [ ] **Description:** Create the `post-model.js` file which will define the data access API and interact with the JSON persistence module. The controller should not perform any direct file I/O.
+- [x] **Description:** Create the `post-model.js` file which will define the data access API and interact with the JSON persistence module. The controller should not perform any direct file I/O.
 - **✅ Definition of Done:**
-    - [ ] The model exposes all required data functions: `findAll`, `findById`, `create`, `update`, `remove`, and `query`.
-    - [ ] The `query` function handles filtering (search), sorting, and pagination logic.
-    - [ ] All functions in the model interact with the persistence layer (`file-store.js`) and not directly with `fs`.
+    - [x] The model exposes all required data functions: `findAll`, `findById`, `create`, `update`, `remove`, and `query`.
+    - [x] The `query` function handles filtering (search), sorting, and pagination logic.
+    - [x] All functions in the model interact with the persistence layer (`file-store.js`) and not directly with `fs`.
 
 ### **Task #6: Implement Post Validation Utilities**
 - [ ] **Description:** Create validation functions in `utils/validate.js` to check the integrity of incoming post data for create and update operations.

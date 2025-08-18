@@ -7,8 +7,8 @@
   },
   "scripts" : {
   	"dev" : "node src/server.js" ,
-	"format": "prettier --write \"src/**/*.{js,json}\" \"app.js\"",
-	"lint" : "eslint \"src/**/*.{js,ts}\" \"app.js\""
+	"format": "prettier --write \"src/**/*.{js,json}\" \"src/app.js\"",
+	"lint" : "eslint \"src/**/*.{js,ts}\" \"src/app.js\""
   },
   "devDependencies": {
     "eslint": "^9.33.0",
